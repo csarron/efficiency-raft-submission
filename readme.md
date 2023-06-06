@@ -4,7 +4,7 @@
 
 then `pip install -e .`
 
-# usage
+## usage
 
 ```bash
 # remove debug=True for efficiency benchmark
@@ -23,4 +23,15 @@ python entrypoint.py with classifier_name=TransformersCausalLMClassifier task=ad
 # zero shot bart-large-mnli
 python entrypoint.py with classifier_name=TransformersZeroShotPipelineClassifier task=ade_corpus_v2 classifier_kwargs='{"model_type":"facebook/bart-large-mnli", "config": "ade_corpus_v2"}' debug=True
 
+```
+
+## efficiency benchmark
+
+```bash
+
+
+efficiency-benchmark run --task raft::ade_corpus_v2  --max_batch_size 1 --scenario accuracy  -- xxx (add above command)
+
+# e.g. 
+efficiency-benchmark run --task raft::ade_corpus_v2  --max_batch_size 1 --scenario accuracy  -- python entrypoint.py with classifier_name=TransformersZeroShotPipelineClassifier task=ade_corpus_v2 classifier_kwargs='{"model_type":"facebook/bart-large-mnli", "config": "ade_corpus_v2"}' 
 ```
