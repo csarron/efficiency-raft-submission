@@ -125,16 +125,3 @@ def main(classifier_name,
             offline_predictor_wrapper(predictor)
         else:   
             stdio_predictor_wrapper(predictor)
-
-"""
-
-python entrypoint.py with classifier_name=AdaBoostClassifier debug=True
-
-
-python entrypoint.py with classifier_name=TransformersCausalLMClassifier task=ade_corpus_v2 classifier_kwargs='{"model_type":"distilgpt2", "num_prompt_training_examples": 25, "use_task_specific_instructions": True, "do_semantic_selection": True, "config": "ade_corpus_v2", "add_prefixes": False}' debug=True
-
-python entrypoint.py with classifier_name=TransformersCausalLMClassifier task=ade_corpus_v2 classifier_kwargs='{"model_type":"distilgpt2", "config": "ade_corpus_v2"}' debug=True
-
-python entrypoint.py with classifier_name=TransformersZeroShotPipelineClassifier task=ade_corpus_v2 classifier_kwargs='{"model_type":"facebook/bart-large-mnli", "config": "ade_corpus_v2"}' debug=True
-
-"""
